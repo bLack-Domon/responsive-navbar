@@ -1,0 +1,124 @@
+/* Reset some default styles for the list */
+ul {
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+}
+
+/* Remove default margin and padding from the body */
+body {
+ margin: 0;
+ padding: 0;
+}
+
+/* Style the navbar */
+.navbar {
+ background-color:#333232;
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ width: 100%; /* You can adjust this percentage */
+ max-width: 1328px; /* Add a max-width to limit the width */
+ margin: 0 auto; /* Center the navbar horizontally within the viewport */
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 10px 20px;
+}
+
+
+/* Style the brand logo */
+.brand img {
+ height: 60px; /* Adjust the height as needed */
+ border-radius: 45px;
+}
+
+.brand img,
+.brand h1 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    color: #fff;
+}
+/* Style the menu items */
+.menu {
+ display: flex;
+}
+
+.menu li {
+ margin-right: 20px; /* Adjust the spacing between menu items */
+}
+
+.menu a {
+ text-decoration: none;
+ color: #fff;
+ font-weight: bold;
+}
+
+.menu a:hover {
+ color: #ffaf02; /* Change the color on hover */
+}
+
+/* Style the menu toggle for small screens */
+.menu-toggle {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+}
+
+.menu-toggle span {
+ width: 25px;
+ height: 3px;
+ background-color: #fff;
+ margin: 3px 0;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+ .menu {
+     display: none;
+     flex-direction: column;
+     background-color: #333;
+     position: absolute;
+     top: 80px;
+     right: 0;
+     left: 0;
+     z-index: 1;
+ }
+
+ .menu.active {
+     display: flex;
+ }
+
+/* Style the menu toggle for small screens */
+.menu-toggle {
+ display: flex;
+ align-items: center; /* Center vertically */
+ padding: 0 15px; /* Add padding to make it easier to click */
+ cursor: pointer;
+ position: absolute; /* Position it absolutely within the navbar */
+ right: 40px; /* Adjust the right position as needed */
+ top: 30px; /* Adjust the top position as needed */
+ z-index: 2; /* Ensure it's above the menu items */
+}
+
+
+ .menu-toggle.active span:nth-child(1) {
+     transform: rotate(-45deg) translate(-5px, 6px);
+ }
+
+ .menu-toggle.active span:nth-child(2) {
+     opacity: 0;
+ }
+
+ .menu-toggle.active span:nth-child(3) {
+     transform: rotate(45deg) translate(-5px, -6px);
+ }
+
+ .menu li {
+     text-align: center;
+     margin: 15px;
+     margin-right: 30px;
+ }
+}
